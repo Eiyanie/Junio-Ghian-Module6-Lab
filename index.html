@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>IT Seminar Registration | Universidad de Dagupan</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <p class="school">Universidad de Dagupan &middot; School of Information Technology Education</p>
+    <h1>IT Seminar Registration</h1>
+    <p class="intro">Fill in your details to reserve a seat. All fields are required.</p>
+  </header>
+
+  <main>
+    <form id="registrationForm" novalidate>
+
+      <div class="field">
+        <label for="fullName">Full name</label>
+        <input type="text" id="fullName" name="fullName" autocomplete="name" required
+               aria-invalid="false" aria-describedby="fullNameError">
+        <p id="fullNameError" class="error" aria-live="polite"></p>
+      </div>
+
+      <div class="field">
+        <label for="studentNumber">Student number</label>
+        <input type="text" id="studentNumber" name="studentNumber" inputmode="numeric"
+               autocomplete="off" required aria-invalid="false"
+               aria-describedby="studentNumberHint studentNumberError">
+        <p id="studentNumberHint" class="hint">Format: 24-1234-123</p>
+        <p id="studentNumberError" class="error" aria-live="polite"></p>
+      </div>
+
+      <div class="field">
+        <label for="email">Email address</label>
+        <input type="email" id="email" name="email" autocomplete="email" required
+               aria-invalid="false" aria-describedby="emailError">
+        <p id="emailError" class="error" aria-live="polite"></p>
+      </div>
+
+      <div class="field">
+        <label for="mobileNumber">Mobile number</label>
+        <input type="tel" id="mobileNumber" name="mobileNumber" autocomplete="tel" required
+               aria-invalid="false" aria-describedby="mobileNumberHint mobileNumberError">
+        <p id="mobileNumberHint" class="hint">Use 09XXXXXXXXX or +639XXXXXXXXX, with no spaces or hyphens.</p>
+        <p id="mobileNumberError" class="error" aria-live="polite"></p>
+      </div>
+
+      <div class="field">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" autocomplete="new-password" required
+               aria-invalid="false" aria-describedby="passwordFeedback passwordError">
+        <p id="passwordFeedback" class="feedback" aria-live="polite"></p>
+        <p id="passwordError" class="error" aria-live="polite"></p>
+      </div>
+
+      <div class="field">
+        <label for="confirmPassword">Confirm password</label>
+        <input type="password" id="confirmPassword" name="confirmPassword" autocomplete="new-password" required
+               aria-invalid="false" aria-describedby="confirmPasswordError">
+        <p id="confirmPasswordError" class="error" aria-live="polite"></p>
+      </div>
+
+      <div class="field">
+        <label for="course">Course</label>
+        <select id="course" name="course" required aria-invalid="false" aria-describedby="courseError">
+          <option value="" selected>Select your course</option>
+          <option value="BSIT">BSIT</option>
+          <option value="BSCS">BSCS</option>
+        </select>
+        <p id="courseError" class="error" aria-live="polite"></p>
+      </div>
+
+      <div class="field field-check">
+        <input type="checkbox" id="terms" name="terms" required
+               aria-invalid="false" aria-describedby="termsError">
+        <label for="terms">I agree to the seminar terms and conditions</label>
+        <p id="termsError" class="error" aria-live="polite"></p>
+      </div>
+
+      <div class="actions">
+        <button type="submit" id="registerBtn">Register</button>
+        <button type="reset" id="resetBtn">Reset</button>
+      </div>
+    </form>
+
+    <p id="successMessage" class="success" role="status" tabindex="-1" hidden></p>
+
+    <section id="registrationSummary" class="summary" aria-labelledby="summaryHeading" hidden>
+      <h2 id="summaryHeading">Registration summary</h2>
+      <dl>
+        <dt>Full name</dt>
+        <dd id="summaryName"></dd>
+        <dt>Student number</dt>
+        <dd id="summaryStudentNumber"></dd>
+        <dt>Email address</dt>
+        <dd id="summaryEmail"></dd>
+        <dt>Mobile number</dt>
+        <dd id="summaryMobileNumber"></dd>
+        <dt>Course</dt>
+        <dd id="summaryCourse"></dd>
+      </dl>
+    </section>
+  </main>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
